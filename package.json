@@ -4,7 +4,6 @@
   "description": "JHF IT Home project assets from Stitch",
   "main": "index.html",
   "scripts": {
-    "build": "echo 'Building static assets... Done.'",
     "start": "npx http-server -p 8126"
   },
   "keywords": [],
