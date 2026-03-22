@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>About Us & Careers | JHF IT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2988BC",
+                        "surface": "#F7F9FB",
+                        "text-main": "#111827",
+                        "text-muted": "#4B5563",
+                        "border-color": "#E5E7EB"
+                    },
+                    fontFamily: {
+                        "heading": ["'Plus Jakarta Sans'", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-text-main font-body antialiased">
+    
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-border-color shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex-shrink-0">
+                <img src="JHF_Logo.svg" alt="JHF IT Logo" class="h-8 md:h-10 w-auto">
+            </a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="text-text-main hover:text-primary transition-colors font-medium text-sm" href="services.html">Services</a>
+                <a class="text-text-main hover:text-primary transition-colors font-medium text-sm" href="cognilearn.html">Cognilearn</a>
+                <a class="text-text-main hover:text-primary transition-colors font-medium text-sm" href="case-studies.html">Case Studies</a>
+                <a class="text-primary border-b-2 border-primary pb-0.5 font-medium text-sm" href="careers.html">About</a>
+            </div>
+            <a class="bg-primary text-white px-6 py-2 rounded font-medium text-sm hover:bg-opacity-90 transition-opacity" href="contact.html">
+                Contact Us
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative max-w-7xl mx-auto px-6 py-20 lg:py-36 overflow-hidden text-left">
+            
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start max-w-7xl mx-auto">
+                <div class="flex-1 min-w-0 max-w-3xl">
+                <h1 class="text-4xl lg:text-6xl font-medium font-heading text-text-main mb-10 leading-[1.1] tracking-tight">
+                    About JHF IT<br/>
+                    The <span class="font-extrabold">Vision</span>
+                </h1>
+                
+                <div class="flex flex-col items-start gap-8 mb-12">
+                    <div class="flex gap-5 items-stretch justify-start">
+                        <div class="w-1.5 bg-primary rounded-full flex-shrink-0"></div>
+                        <p class="text-lg text-text-muted leading-relaxed max-w-xl text-left">
+                            A global gateway bridging the gap between young high-potential talents and complex IT requirements through deep outsourcing and educational incubation.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Metrics -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-12 border-t border-border-color/50 max-w-2xl">
+                    <div class="flex flex-col items-start">
+                        <div class="text-3xl font-extrabold text-text-main">HQ</div>
+                        <div class="text-[9px] uppercase tracking-widest text-text-muted font-bold mt-1.5">Industrial Focus</div>
+                    </div>
+                    <div class="flex flex-col items-start">
+                        <div class="text-3xl font-extrabold text-text-main">2026</div>
+                        <div class="text-[9px] uppercase tracking-widest text-text-muted font-bold mt-1.5">Growth Vision</div>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Page at a Glance Sidebar -->
+                <div class="hidden lg:block w-72 xl:w-80 flex-shrink-0 pl-10 border-l border-border-color/40">
+                    <div class="bg-surface/50 border border-border-color backdrop-blur-sm rounded-2xl p-6 relative overflow-hidden group hover:border-primary/30 transition-colors">
+                        <!-- Accent gradient -->
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-10 -mt-10 transition-opacity group-hover:bg-primary/10"></div>
+                        
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-3 mb-6 pb-4 border-b border-border-color/50">
+                                <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary border border-primary/20 shadow-inner">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                                <h3 class="font-heading font-bold text-text-main text-sm uppercase tracking-wider">At a Glance</h3>
+                            </div>
+                            
+                            <ul class="space-y-5">
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 shadow-[0_0_8px_rgba(var(--primary),0.8)]"></div>
+                                    <div>
+                                        <span class="block text-sm font-bold text-text-main leading-tight mb-1">Our Mission</span>
+                                        <span class="block text-xs text-text-muted leading-relaxed">Bridging the global IT talent gap through incubation.</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 shadow-[0_0_8px_rgba(var(--primary),0.8)]"></div>
+                                    <div>
+                                        <span class="block text-sm font-bold text-text-main leading-tight mb-1">Growth Vision 2026</span>
+                                        <span class="block text-xs text-text-muted leading-relaxed">Aggressive expansion across Middle East operations.</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 shadow-[0_0_8px_rgba(var(--primary),0.8)]"></div>
+                                    <div>
+                                        <span class="block text-sm font-bold text-text-main leading-tight mb-1">Innovation DNA</span>
+                                        <span class="block text-xs text-text-muted leading-relaxed">A core culture driven by excellence and precision.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision/Mission/Values Section -->
+        <section class="bg-surface py-20 border-t border-b border-border-color">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-3xl font-bold font-heading text-text-main mb-12">Vision & Mission</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                    <div>
+                        <h3 class="text-xl font-bold font-heading text-text-main mb-3 text-primary">Our Vision</h3>
+                        <p class="text-text-muted leading-relaxed">
+                            Building products and organizations on the trust of customers in quality and professionalism, while providing an opportunity for young talents to learn directly from industry experts. We see a future where the talent pipeline perfectly matches global enterprise demand.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold font-heading text-text-main mb-3 text-primary">Our Mission</h3>
+                        <p class="text-text-muted leading-relaxed">
+                            Our daily operations and long-term strategy are governed entirely by three absolute pillars:<br><br>
+                            <strong class="text-text-main">Opportunity</strong>, <strong class="text-text-main">Quality</strong>, and <strong class="text-text-main">Experience</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-bold font-heading text-text-main mb-6 border-b border-border-color pb-2">Core Values</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 border border-border-color rounded text-center">
+                        <span class="material-symbols-outlined text-primary mb-2 text-3xl">lightbulb</span>
+                        <h4 class="font-bold text-text-main text-sm">Innovation</h4>
+                    </div>
+                    <div class="bg-white p-6 border border-border-color rounded text-center">
+                        <span class="material-symbols-outlined text-primary mb-2 text-3xl">psychology</span>
+                        <h4 class="font-bold text-text-main text-sm">Experience</h4>
+                    </div>
+                    <div class="bg-white p-6 border border-border-color rounded text-center">
+                        <span class="material-symbols-outlined text-primary mb-2 text-3xl">verified</span>
+                        <h4 class="font-bold text-text-main text-sm">Reliability</h4>
+                    </div>
+                    <div class="bg-white p-6 border border-border-color rounded text-center">
+                        <span class="material-symbols-outlined text-primary mb-2 text-3xl">shield</span>
+                        <h4 class="font-bold text-text-main text-sm">Security</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credibility Signals -->
+        <section class="py-20 bg-white border-b border-border-color">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-3xl font-bold font-heading text-text-main mb-12 text-center">Company Credibility</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Certifications & Awards -->
+                    <div class="border border-border-color p-8 rounded bg-surface">
+                        <h3 class="text-lg font-bold font-heading text-text-main mb-4 border-b border-border-color pb-2">Certifications & Awards</h3>
+                        <ul class="text-sm text-text-muted space-y-3">
+                            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">•</span> ISO 27001 Certified (Information Security)</li>
+                            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">•</span> MEA Technology Innovator Award (2023)</li>
+                            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">•</span> Top 50 EdTech Platforms (Cognilearn)</li>
+                        </ul>
+                    </div>
+                    <!-- Incubations & Partnerships -->
+                    <div class="border border-border-color p-8 rounded bg-surface">
+                        <h3 class="text-lg font-bold font-heading text-text-main mb-4 border-b border-border-color pb-2">Startup Incubations & MOUs</h3>
+                        <ul class="text-sm text-text-muted space-y-3">
+                            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">•</span> Techstars Dubai Alumni Network</li>
+                            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">•</span> MOU: Technical University of the Middle East</li>
+                            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">•</span> MOU: Asian Institute of Technology</li>
+                        </ul>
+                    </div>
+                    <!-- Media Mentions -->
+                    <div class="border border-border-color p-8 rounded bg-surface">
+                        <h3 class="text-lg font-bold font-heading text-text-main mb-4 border-b border-border-color pb-2">Media & Publications</h3>
+                        <ul class="text-sm text-text-muted space-y-3">
+                            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">•</span> "Outsourcing Scaled: JHF IT on the Rise" - TechCrunch MEA</li>
+                            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">•</span> "Bridging the Talent Gap" - EdTech Review Profile</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hiring / Careers Section -->
+        <section class="max-w-7xl mx-auto px-6 py-20">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold font-heading text-text-main mb-4">Careers at JHF IT</h2>
+                <p class="text-base text-text-muted max-w-2xl">
+                    Join a team solving critical infrastructure challenges. We hire primarily for technical depth and architectural mindset.
+                </p>
+            </div>
+
+            <!-- Culture & Benefits -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                <div class="bg-surface p-8 border border-border-color rounded flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold font-heading text-text-main mb-4 border-b border-border-color pb-2">Our Work Culture</h3>
+                        <p class="text-text-muted text-sm leading-relaxed mb-6">
+                            We operate on a foundation of absolute accountability, continuous technical upskilling, and direct mentorship. We don't just write code; we cultivate the expertise required to build fail-safe global systems. We value engineers who question assumptions and build for immense scale.
+                        </p>
+                    </div>
+                    <div class="h-48 w-full rounded border border-border-color overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80" alt="Team Workshop" class="w-full h-full object-cover contrast-[1.15] saturate-[.70] brightness-[.95]"/>
+                    </div>
+                </div>
+                <div class="bg-surface p-8 border border-border-color rounded">
+                    <h3 class="text-lg font-bold font-heading text-text-main mb-4 border-b border-border-color pb-2">Core Benefits</h3>
+                    <ul class="text-sm text-text-muted space-y-3">
+                        <li class="flex items-start gap-2"><span class="text-primary font-bold mt-0.5">✓</span> Competitive Compensation (MEA bracket matching)</li>
+                        <li class="flex items-start gap-2"><span class="text-primary font-bold mt-0.5">✓</span> Fully remote or hybrid office options (Dubai/India)</li>
+                        <li class="flex items-start gap-2"><span class="text-primary font-bold mt-0.5">✓</span> Direct access to Cognilearn continuous education</li>
+                        <li class="flex items-start gap-2"><span class="text-primary font-bold mt-0.5">✓</span> Comprehensive health and high-end hardware allowances</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Open Roles -->
+            <h3 class="text-xl font-bold font-heading text-text-main mb-6 border-b border-border-color pb-2">Open Positions</h3>
+            <div class="space-y-4">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center p-6 border border-border-color rounded hover:bg-surface transition-colors">
+                    <div>
+                        <h4 class="text-lg font-bold font-heading text-text-main">Senior Cloud Architect</h4>
+                        <p class="text-sm text-text-muted mt-1">Dubai / Remote • Full-Time</p>
+                    </div>
+                    <a href="contact.html" class="mt-4 md:mt-0 text-primary font-medium text-sm hover:underline">Apply Now</a>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center p-6 border border-border-color rounded hover:bg-surface transition-colors">
+                    <div>
+                        <h4 class="text-lg font-bold font-heading text-text-main">Data Engineer (LLM Integration)</h4>
+                        <p class="text-sm text-text-muted mt-1">India / Remote • Full-Time</p>
+                    </div>
+                    <a href="contact.html" class="mt-4 md:mt-0 text-primary font-medium text-sm hover:underline">Apply Now</a>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center p-6 border border-border-color rounded hover:bg-surface transition-colors">
+                    <div>
+                        <h4 class="text-lg font-bold font-heading text-text-main">Cognilearn Technical Instructor</h4>
+                        <p class="text-sm text-text-muted mt-1">Remote • Full-Time</p>
+                    </div>
+                    <a href="contact.html" class="mt-4 md:mt-0 text-primary font-medium text-sm hover:underline">Apply Now</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Enterprise Call to Action -->
+        <section class="bg-surface border-t border-border-color py-24 lg:py-32 overflow-hidden relative">
+            <!-- Subtle Tech Background Grid -->
+            <div class="absolute inset-0 -z-10 opacity-[0.03] pointer-events-none" 
+                 style="background-image: linear-gradient(to right, #111827 1px, transparent 1px), linear-gradient(to bottom, #111827 1px, transparent 1px); background-size: 4rem 4rem;"></div>
+            
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                    <!-- Text Side (Left) -->
+                    <div class="lg:col-span-7">
+                        <div class="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest text-text-muted font-bold mb-6 border border-border-color px-3 py-1.5 rounded-full bg-white">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                            Initiate Project
+                        </div>
+                        <h2 class="text-3xl lg:text-4xl font-medium font-heading text-text-main mb-6">
+                            Ready to scale your initiative?
+                        </h2>
+                        <p class="text-xl text-text-muted max-w-xl">
+                            Partner with JHF IT to architect complex enterprise platforms, incubate elite talent, and build world-class tech capabilities.
+                        </p>
+                    </div>
+                    
+                    <!-- Action Side (Right) -->
+                    <div class="lg:col-span-5 flex flex-col items-start lg:items-end lg:pl-12 lg:border-l border-border-color/50">
+                        <a href="contact.html" class="group relative inline-flex items-center justify-center bg-text-main text-white px-10 py-5 rounded overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 w-full mb-8">
+                            <!-- Accent subtle glow on hover -->
+                            <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <span class="relative z-10 font-bold tracking-wide text-lg text-white">Schedule Consultation</span>
+                            <svg class="relative z-10 w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                        
+                        <div class="w-full flex justify-between items-center text-sm border-t border-border-color/50 pt-6">
+                            <div class="flex flex-col">
+                                <span class="text-text-muted text-[10px] uppercase font-bold tracking-widest mb-1.5">Direct Line</span>
+                                <a href="mailto:contact@jhfit.com" class="text-text-main font-bold hover:text-primary transition-colors text-base">contact@jhfit.com</a>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <span class="text-text-muted text-[10px] uppercase font-bold tracking-widest mb-1.5">Global HQ</span>
+                                <span class="text-text-main font-bold font-mono text-base">Trivandrum, Kerala</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border-color py-16">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="md:col-span-1">
+                <img src="JHF_Logo.svg" alt="JHF IT Logo" class="h-8 md:h-10 w-auto mb-4">
+                <p class="text-sm text-text-muted mb-4">
+                    IT Outsourcing and Skill Development in EdTech.
+                </p>
+                <div class="text-sm text-text-muted">
+                    Email: contact@jhfit.com
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-bold font-heading text-text-main mb-4">Company</h4>
+                <ul class="space-y-2 text-sm text-text-muted">
+                    <li><a href="careers.html" class="hover:text-primary transition-colors">About Us</a></li>
+                    <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                    <li><a href="careers.html" class="hover:text-primary transition-colors">Careers</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold font-heading text-text-main mb-4">Services</h4>
+                <ul class="space-y-2 text-sm text-text-muted">
+                    <li><a href="services.html" class="hover:text-primary transition-colors">Software Development</a></li>
+                    <li><a href="services.html" class="hover:text-primary transition-colors">AI & Data Analysis</a></li>
+                    <li><a href="cognilearn.html" class="hover:text-primary transition-colors">EdTech & Incubation</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold font-heading text-text-main mb-4">Legal</h4>
+                <ul class="space-y-2 text-sm text-text-muted">
+                    <li><a href="#" class="hover:text-primary transition-colors">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 pt-8 mt-12 border-t border-border-color flex justify-between items-center text-sm text-text-muted">
+            <div>&copy; 2026 JHF IT. All rights reserved.</div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-primary transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-primary transition-colors">Twitter</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+

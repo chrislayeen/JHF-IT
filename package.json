@@ -1,0 +1,13 @@
+{
+  "name": "jhf-it-home",
+  "version": "1.0.0",
+  "description": "JHF IT Home project assets from Stitch",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Building static assets... Done.'",
+    "start": "npx http-server -p 8126"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
