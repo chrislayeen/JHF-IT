@@ -386,7 +386,7 @@ const closeBtn = document.getElementById('closeMenu');
 const mobileMenu = document.getElementById('mobileMenu');
 const menuLinks = mobileMenu.querySelectorAll('a');
 
-if (menuBtn & closeBtn & mobileMenu) {
+if (menuBtn && closeBtn && mobileMenu) {
   menuBtn.addEventListener('click', () => {
     mobileMenu.classList.remove('translate-x-full');
     document.body.style.overflow = 'hidden';
@@ -403,4 +403,5 @@ if (menuBtn & closeBtn & mobileMenu) {
 </script>
 </body>
 </html>
+
 
