@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/><meta content="width=device-width,initial-scale=1.0" name="viewport"/>
@@ -60,7 +60,7 @@
       color: #2988BC;
       background: rgba(41, 136, 188, .08);
     }
-    /* Hero tag pill — white variant for dark hero backgrounds */
+    /* Hero tag pill â€” white variant for dark hero backgrounds */
     .tag.hero-animate {
       color: #ffffff;
       background: rgba(255, 255, 255, 0.12);
@@ -422,13 +422,14 @@ const obs = new IntersectionObserver(entries => {
 allReveal.forEach(el => obs.observe(el));
 </script>
 
-// Ã¢â€â‚¬Ã¢â€â‚¬ MOBILE MENU Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+<script>
+
 const menuBtn = document.getElementById('menuBtn');
 const closeBtn = document.getElementById('closeMenu');
 const mobileMenu = document.getElementById('mobileMenu');
 const menuLinks = mobileMenu.querySelectorAll('a');
 
-if (menuBtn & closeBtn & mobileMenu) {
+if (menuBtn && closeBtn && mobileMenu) {
   menuBtn.addEventListener('click', () => {
     mobileMenu.classList.remove('translate-x-full');
     document.body.style.overflow = 'hidden';
