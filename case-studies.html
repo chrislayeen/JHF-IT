@@ -1,321 +1,325 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Case Studies | JHF IT</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet"/>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#2988BC",
-                        "surface": "#F7F9FB",
-                        "text-main": "#111827",
-                        "text-muted": "#4B5563",
-                        "border-color": "#E5E7EB"
-                    },
-                    fontFamily: {
-                        "heading": ["'Plus Jakarta Sans'", "sans-serif"],
-                        "body": ["Inter", "sans-serif"]
-                    }
-                }
-            }
-        }
-    </script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>Case Studies | JHF IT</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<script>tailwind.config={theme:{extend:{colors:{"primary":"#2988BC","surface":"#F7F9FB","text-main":"#1e293b","text-muted":"#4B5563","border-color":"#E5E7EB"},fontFamily:{heading:["'Plus Jakarta Sans'","sans-serif"],body:["'Plus Jakarta Sans'","sans-serif"]}}}}</script>
+  <style>
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-left { opacity: 0; transform: translateX(-36px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal-left.visible { opacity: 1; transform: none; }
+    .reveal-right { opacity: 0; transform: translateX(36px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal-right.visible { opacity: 1; transform: none; }
+
+    /* Line Reveal */
+    .line-reveal { overflow: hidden; }
+    .line-reveal > * > span { display: block; transform: translateY(100%); transition: transform 0.82s cubic-bezier(0.16, 1, 0.3, 1); }
+    .line-reveal.visible > * > span { transform: translateY(0); }
+
+    /* Hero */
+    .hero-overlay {
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.5) 0%, rgba(15, 23, 42, 0.82) 100%);
+    }
+
+    .hero-title {
+      color: #FFFFFF;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.5), 0 1px 0 rgba(0,0,0,0.3);
+    }
+
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-animate {
+      animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Custom Transitions */
+    .img-zoom { overflow: hidden; }
+    .img-zoom img { transition: transform 0.8s cubic-bezier(0.2, 0, 0, 1); }
+    .img-zoom:hover img { transform: scale(1.08); }
+    
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(41, 136, 188, 0.4);
+      color: #2988BC;
+      background: rgba(41, 136, 188, 0.1);
+    }
+    /* Hero tag pill — white variant for dark hero backgrounds */
+    .tag.hero-animate {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+  </style>
 </head>
 <body class="bg-white text-text-main font-body antialiased">
-    
-    <!-- Navbar -->
-    <nav class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-border-color shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex-shrink-0">
-                <img src="JHF_Logo.svg" alt="JHF IT Logo" class="h-8 md:h-10 w-auto">
-            </a>
-            <div class="hidden md:flex gap-8 items-center">
-                <a class="text-text-main hover:text-primary transition-colors font-medium text-sm" href="services.html">Services</a>
-                <a class="text-text-main hover:text-primary transition-colors font-medium text-sm" href="cognilearn.html">Cognilearn</a>
-                <a class="text-primary border-b-2 border-primary pb-0.5 font-medium text-sm" href="case-studies.html">Case Studies</a>
-                <a class="text-text-main hover:text-primary transition-colors font-medium text-sm" href="careers.html">About</a>
-            </div>
-            <a class="bg-primary text-white px-6 py-2 rounded font-medium text-sm hover:bg-opacity-90 transition-opacity" href="contact.html">
-                Contact Us
-            </a>
+  <nav class="fixed top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-border-color shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="hover:opacity-80 transition-opacity">
+        <img src="JHF_Logo.svg" alt="JHF IT" class="h-8 md:h-10 w-auto">
+      </a>
+      <div class="hidden md:flex gap-8 items-center">
+        <a class="text-[#1e293b] hover:text-primary transition-colors font-semibold text-sm tracking-tight" href="services.html">Services</a>
+        <a class="text-[#1e293b] hover:text-primary transition-colors font-semibold text-sm tracking-tight" href="cognilearn.html">Cognilearn</a>
+        <a class="text-primary border-b-2 border-primary pb-0.5 font-bold text-sm tracking-tight" href="case-studies.html">Case Studies</a>
+        <a class="text-[#1e293b] hover:text-primary transition-colors font-semibold text-sm tracking-tight" href="careers.html">About</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <a class="bg-[#1e293b] text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-primary transition-all duration-300 hidden sm:block shadow-lg shadow-black/5"
+          href="contact.html">Contact Us</a>
+        <button id="menuBtn" class="md:hidden text-[#1e293b] p-2 hover:bg-gray-100 rounded-lg transition-colors">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main>
+<section class="relative w-full h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+  <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1800&q=85" alt="Case Studies Impact" class="absolute inset-0 w-full h-full object-cover">
+  <div class="hero-overlay absolute inset-0"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20">
+    <div class="tag mb-10 hero-animate" style="animation-delay:0s">Proven Excellence</div>
+
+    <h1 class="hero-title text-7xl lg:text-[100px] font-extrabold font-heading leading-[0.82] tracking-tighter hero-animate mb-4" style="animation-delay:0.1s">
+      Successful Impact.
+    </h1>
+    <h1 class="hero-title text-7xl lg:text-[100px] font-extrabold font-heading leading-[0.82] tracking-tighter hero-animate mb-12" style="opacity:0;animation-delay:0.25s;animation-fill-mode:forwards">
+      Proven Results.
+    </h1>
+
+    <p class="text-white/80 text-xl lg:text-2xl max-w-2xl font-medium leading-relaxed mb-16 reveal" style="transition-delay: 0.2s">
+      A curated portfolio of global enterprise outsourcing solutions and high-impact innovations from our Cognilearn incubator.
+    </p>
+
+    <!-- Sleek Stats Plate -->
+    <div class="inline-flex flex-wrap glass-card rounded-[32px] p-2 reveal" style="transition-delay: 0.4s">
+      <div class="px-12 py-6 border-r border-white/10">
+        <div class="text-4xl font-black text-white leading-none mb-1">12+</div>
+        <div class="text-[9px] uppercase tracking-[0.25em] font-black text-white/40">Case Histories</div>
+      </div>
+      <div class="px-12 py-6 border-r border-white/10">
+        <div class="text-4xl font-black text-primary leading-none mb-1">100%</div>
+        <div class="text-[9px] uppercase tracking-[0.25em] font-black text-white/40">Delivery Rate</div>
+      </div>
+      <div class="px-12 py-6">
+        <div class="text-4xl font-black text-white leading-none mb-1">24/7</div>
+        <div class="text-[9px] uppercase tracking-[0.25em] font-black text-white/40">Global Support</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="tag mb-5">Case Study 01</div>
+    <h2 class="text-5xl lg:text-6xl font-extrabold font-heading text-text-main mb-14 max-w-4xl tracking-tighter leading-[1.1]">Enterprise E-Commerce<br/>Performance Refactoring</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div class="img-zoom relative rounded-xl overflow-hidden h-80 lg:h-[480px] reveal-left">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" alt="Team collaborating" class="w-full h-full object-cover">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/65 to-transparent p-8">
+          <span class="text-white/65 text-xs uppercase tracking-widest font-bold">Client</span>
+          <p class="text-white font-bold mt-1">Regional Retail Conglomerate (Cognilearn Incubator Project)</p>
         </div>
-    </nav>
+      </div>
+      <div class="space-y-8 reveal-right">
+        <div class="border-l-4 border-primary pl-6">
+          <h4 class="font-bold font-heading text-text-main mb-2 text-lg">Problem</h4>
+          <p class="text-text-muted leading-relaxed">The client's legacy monolithic architecture was resulting in severe latency during peak sales events, causing high cart abandonment rates.</p>
+        </div>
+        <div class="border-l-4 border-border-color pl-6">
+          <h4 class="font-bold font-heading text-text-main mb-2 text-lg">Solution</h4>
+          <p class="text-text-muted leading-relaxed">A dedicated team of 4 Cognilearn student interns, overseen by senior JHF IT architects, designed and implemented a migration to a highly-available microservices architecture utilizing AWS and Docker.</p>
+        </div>
+        <div class="bg-primary/5 border border-primary/20 rounded-xl p-8">
+          <h4 class="font-bold font-heading text-primary mb-3 text-lg">Result</h4>
+          <p class="text-text-main font-medium leading-relaxed">40% reduction in page load capacity during peak traffic. All 4 Cognilearn interns were subsequently offered full-time enterprise engineering roles by the client upon graduation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="relative max-w-7xl mx-auto px-6 py-20 lg:py-36 overflow-hidden text-left">
-            
-            <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start max-w-7xl mx-auto">
-                <div class="flex-1 min-w-0 max-w-3xl">
-                <h1 class="text-4xl lg:text-6xl font-medium font-heading text-text-main mb-10 leading-[1.1] tracking-tight">
-                    Proven <span class="font-extrabold">Impact</span><br/>
-                    & Case Studies
-                </h1>
-                
-                <div class="flex flex-col items-start gap-8 mb-12">
-                    <div class="flex gap-5 items-stretch justify-start">
-                        <div class="w-1.5 bg-primary rounded-full flex-shrink-0"></div>
-                        <p class="text-lg text-text-muted leading-relaxed max-w-xl text-left">
-                            Real-world examples of our IT outsourcing deliverables and successful Cognilearn student intern projects across global markets.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Metrics -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-12 border-t border-border-color/50 max-w-2xl">
-                    <div class="flex flex-col items-start">
-                        <div class="text-3xl font-extrabold text-text-main">12+</div>
-                        <div class="text-[9px] uppercase tracking-widest text-text-muted font-bold mt-1.5">Success Stories</div>
-                    </div>
-                    <div class="flex flex-col items-start">
-                        <div class="text-3xl font-extrabold text-text-main">100%</div>
-                        <div class="text-[9px] uppercase tracking-widest text-text-muted font-bold mt-1.5">Project Security</div>
-                    </div>
-                </div>
-                </div>
-                
-                <!-- Page at a Glance Sidebar -->
-                <div class="hidden lg:block w-72 xl:w-80 flex-shrink-0 pl-10 border-l border-border-color/40">
-                    <div class="bg-surface/50 border border-border-color backdrop-blur-sm rounded-2xl p-6 relative overflow-hidden group hover:border-primary/30 transition-colors">
-                        <!-- Accent gradient -->
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-10 -mt-10 transition-opacity group-hover:bg-primary/10"></div>
-                        
-                        <div class="relative z-10">
-                            <div class="flex items-center gap-3 mb-6 pb-4 border-b border-border-color/50">
-                                <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary border border-primary/20 shadow-inner">
-                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                    </svg>
-                                </div>
-                                <h3 class="font-heading font-bold text-text-main text-sm uppercase tracking-wider">At a Glance</h3>
-                            </div>
-                            
-                            <ul class="space-y-5">
-                                <li class="flex items-start gap-3">
-                                    <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 shadow-[0_0_8px_rgba(var(--primary),0.8)]"></div>
-                                    <div>
-                                        <span class="block text-sm font-bold text-text-main leading-tight mb-1">12+ Success Stories</span>
-                                        <span class="block text-xs text-text-muted leading-relaxed">Proven track record across critical industries.</span>
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 shadow-[0_0_8px_rgba(var(--primary),0.8)]"></div>
-                                    <div>
-                                        <span class="block text-sm font-bold text-text-main leading-tight mb-1">Enterprise Impact</span>
-                                        <span class="block text-xs text-text-muted leading-relaxed">Scalable solutions for high-demand environments.</span>
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 shadow-[0_0_8px_rgba(var(--primary),0.8)]"></div>
-                                    <div>
-                                        <span class="block text-sm font-bold text-text-main leading-tight mb-1">Zero Downtime</span>
-                                        <span class="block text-xs text-text-muted leading-relaxed">Mission-critical reliability guaranteed on deployment.</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="py-24 bg-text-main">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="tag mb-5">Case Study 02</div>
+    <h2 class="text-5xl lg:text-6xl font-extrabold font-heading text-white mb-14 max-w-4xl tracking-tighter leading-[1.1]">AI-Powered Customer Sentiment<br/>Analytics Platform</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div class="space-y-8 order-2 lg:order-1 reveal-left">
+        <div class="border-l-4 border-primary pl-6">
+          <h4 class="font-bold font-heading text-white mb-2 text-lg">Problem</h4>
+          <p class="text-white/65 leading-relaxed">A global brand was struggling to process 50,000+ daily feedback points across 12 languages, delaying critical product issue detection.</p>
+        </div>
+        <div class="border-l-4 border-white/15 pl-6">
+          <h4 class="font-bold font-heading text-white mb-2 text-lg">Solution</h4>
+          <p class="text-white/65 leading-relaxed">A team of 5 Cognilearn student interns developed a real-time NLP pipeline using Transformer models to categorize sentiment and auto-generate priority alerts.</p>
+        </div>
+        <div class="bg-primary/20 border border-primary/30 rounded-xl p-8">
+          <h4 class="font-bold font-heading text-primary mb-3 text-lg">Result</h4>
+          <p class="text-white font-medium leading-relaxed">92% accuracy in sentiment classification and 4x faster escalation speed. Three interns were hired directly by the client's internal AI lab.</p>
+        </div>
+      </div>
+      <div class="img-zoom relative rounded-xl overflow-hidden h-80 lg:h-[480px] order-1 lg:order-2 reveal-right">
+        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80" alt="Cognilearn AI Lab" class="w-full h-full object-cover">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/65 to-transparent p-8">
+          <span class="text-white/65 text-xs uppercase tracking-widest font-bold">Client</span>
+          <p class="text-white font-bold mt-1">Global Consumer Electronics Brand (Cognilearn Incubator Project)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- Case Studies List -->
-        <section class="bg-surface py-20 border-t border-b border-border-color">
-            <div class="max-w-7xl mx-auto px-6 space-y-16">
-                
-                <!-- Project 1: Cognilearn Intern Project -->
-                <div class="bg-white border border-border-color rounded p-8 md:p-12">
-                    <h2 class="text-3xl font-bold font-heading text-text-main mb-8 border-b border-border-color pb-4">Enterprise E-Commerce Performance Refactoring</h2>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                        <div class="md:col-span-1 border-r border-border-color pr-8 hidden md:flex md:flex-col md:gap-6">
-                            <div class="h-40 w-full rounded border border-border-color overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80" alt="Team collaborating" class="w-full h-full object-cover contrast-[1.15] saturate-[.70] brightness-[.95]"/>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-text-main mb-2 text-sm uppercase tracking-wider">Client</h4>
-                                <p class="text-text-muted text-sm">Regional Retail Conglomerate (Cognilearn Incubator Project)</p>
-                            </div>
-                        </div>
-                        <div class="md:hidden border-b border-border-color pb-6 mb-2">
-                             <h4 class="font-bold text-text-main mb-2 text-sm uppercase tracking-wider">Client</h4>
-                             <p class="text-text-muted text-sm">Regional Retail Conglomerate</p>
-                        </div>
+<section class="relative w-full min-h-[400px] flex items-center overflow-hidden">
+  <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80" alt="Enterprise" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-primary/85"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 py-24 lg:py-32 w-full text-center">
+    <div class="max-w-3xl mx-auto reveal">
+      <h2 class="text-5xl lg:text-6xl font-extrabold font-heading text-white leading-[1.1] tracking-tighter mb-6">Ready to scale your initiative?</h2>
+      <p class="text-white/75 text-lg lg:text-xl leading-relaxed mb-12">Partner with JHF IT to architect complex enterprise platforms and build world-class tech capabilities.</p>
+      <a href="contact.html" class="group relative inline-flex items-center gap-2 bg-white text-primary px-12 py-5 rounded-xl font-bold text-base hover:translate-y-[-4px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] transition-all duration-500 overflow-hidden">
+        <span class="relative z-10 flex items-center gap-2">Schedule Consultation <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        <div class="absolute inset-0 bg-primary/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-[-20deg]"></div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
 
-                        <div class="md:col-span-3 space-y-8">
-                            <div>
-                                <h4 class="font-bold font-heading text-text-main mb-2">Problem</h4>
-                                <p class="text-text-muted text-sm leading-relaxed">
-                                    The client's legacy monolithic architecture was resulting in severe latency during peak sales events, causing high cart abandonment rates.
-                                </p>
-                            </div>
-                            <div>
-                                <h4 class="font-bold font-heading text-text-main mb-2">Solution</h4>
-                                <p class="text-text-muted text-sm leading-relaxed">
-                                    A dedicated team of 4 Cognilearn student interns, overseen by senior JHF IT architects, designed and implemented a migration to a highly-available microservices architecture utilizing AWS and Docker.
-                                </p>
-                            </div>
-                            <div class="bg-surface p-6 rounded border border-border-color">
-                                <h4 class="font-bold font-heading text-text-main mb-2">Result</h4>
-                                <p class="text-text-main font-medium text-sm leading-relaxed">
-                                    40% reduction in page load capacity during peak traffic. All 4 Cognilearn interns were subsequently offered full-time enterprise engineering roles by the client upon graduation.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: IT Outsourcing -->
-                <div class="bg-white border border-border-color rounded p-8 md:p-12">
-                    <h2 class="text-3xl font-bold font-heading text-text-main mb-8 border-b border-border-color pb-4">Automated Data Analytics Pipeline Integration</h2>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                        <div class="md:col-span-1 border-r border-border-color pr-8 hidden md:flex md:flex-col md:gap-6">
-                            <div class="h-40 w-full rounded border border-border-color overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" alt="Data Analytics" class="w-full h-full object-cover contrast-[1.15] saturate-[.70] brightness-[.95]"/>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-text-main mb-2 text-sm uppercase tracking-wider">Client</h4>
-                                <p class="text-text-muted text-sm">Middle Eastern Financial Services Firm</p>
-                            </div>
-                        </div>
-                        <div class="md:hidden border-b border-border-color pb-6 mb-2">
-                             <h4 class="font-bold text-text-main mb-2 text-sm uppercase tracking-wider">Client</h4>
-                             <p class="text-text-muted text-sm">Middle Eastern Financial Services Firm</p>
-                        </div>
-
-                        <div class="md:col-span-3 space-y-8">
-                            <div>
-                                <h4 class="font-bold font-heading text-text-main mb-2">Problem</h4>
-                                <p class="text-text-muted text-sm leading-relaxed">
-                                    Highly fragmented legacy data sources were requiring over 80 hours of manual reconciliation monthly, leading to delayed financial modeling and risk assessment.
-                                </p>
-                            </div>
-                            <div>
-                                <h4 class="font-bold font-heading text-text-main mb-2">Solution</h4>
-                                <p class="text-text-muted text-sm leading-relaxed">
-                                    Our MEA Outsourcing Data Science team engineered a unified ETL pipeline using Python, deployed onto an isolated cloud environment, feeding directly into a real-time predictive dashboard.
-                                </p>
-                            </div>
-                            <div class="bg-surface p-6 rounded border border-border-color">
-                                <h4 class="font-bold font-heading text-text-main mb-2">Result</h4>
-                                <p class="text-text-main font-medium text-sm leading-relaxed">
-                                    Manual reporting time reduced by 60 hours per month. The firm achieved T+1 reporting accuracy for the first time in its operational history.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        
-        <!-- Enterprise Call to Action -->
-        <section class="bg-surface border-t border-border-color py-24 lg:py-32 overflow-hidden relative">
-            <!-- Subtle Tech Background Grid -->
-            <div class="absolute inset-0 -z-10 opacity-[0.03] pointer-events-none" 
-                 style="background-image: linear-gradient(to right, #111827 1px, transparent 1px), linear-gradient(to bottom, #111827 1px, transparent 1px); background-size: 4rem 4rem;"></div>
-            
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-                    <!-- Text Side (Left) -->
-                    <div class="lg:col-span-7">
-                        <div class="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest text-text-muted font-bold mb-6 border border-border-color px-3 py-1.5 rounded-full bg-white">
-                            <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-                            Initiate Project
-                        </div>
-                        <h2 class="text-3xl lg:text-4xl font-medium font-heading text-text-main mb-6">
-                            Ready to scale your initiative?
-                        </h2>
-                        <p class="text-xl text-text-muted max-w-xl">
-                            Partner with JHF IT to architect complex enterprise platforms, incubate elite talent, and build world-class tech capabilities.
-                        </p>
-                    </div>
-                    
-                    <!-- Action Side (Right) -->
-                    <div class="lg:col-span-5 flex flex-col items-start lg:items-end lg:pl-12 lg:border-l border-border-color/50">
-                        <a href="contact.html" class="group relative inline-flex items-center justify-center bg-primary text-white px-8 py-3.5 rounded-lg overflow-hidden shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300 mb-8">
-                            <!-- Accent subtle glow on hover -->
-                            <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <span class="relative z-10 font-bold tracking-wide text-sm text-white">Schedule Consultation</span>
-                            <svg class="relative z-10 w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </a>
-                        
-                        <div class="w-full flex justify-between items-center text-sm border-t border-border-color/50 pt-6">
-                            <div class="flex flex-col">
-                                <span class="text-text-muted text-[10px] uppercase font-bold tracking-widest mb-1.5">Direct Line</span>
-                                <a href="mailto:contact@jhfit.com" class="text-text-main font-bold hover:text-primary transition-colors text-base">contact@jhfit.com</a>
-                            </div>
-                            <div class="flex flex-col items-end">
-                                <span class="text-text-muted text-[10px] uppercase font-bold tracking-widest mb-1.5">Global HQ</span>
-                                <span class="text-text-main font-bold font-mono text-base">Thiruvananthapuram, Kerala 695582</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-surface border-t border-border-color py-16">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div class="md:col-span-1">
-                <img src="JHF_Logo.svg" alt="JHF IT Logo" class="h-8 md:h-10 w-auto mb-4">
-                <p class="text-sm text-text-muted mb-4">
-                    IT Outsourcing and Skill Development in EdTech.
-                </p>
-                <div class="text-sm text-text-muted">
-                    Email: contact@jhfit.com
-                </div>
-            </div>
-            
-            <div>
-                <h4 class="font-bold font-heading text-text-main mb-4">Company</h4>
-                <ul class="space-y-2 text-sm text-text-muted">
-                    <li><a href="careers.html" class="hover:text-primary transition-colors">About Us</a></li>
-                    <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
-                    <li><a href="careers.html" class="hover:text-primary transition-colors">Careers</a></li>
-                </ul>
-            </div>
-            
-            <div>
-                <h4 class="font-bold font-heading text-text-main mb-4">Services</h4>
-                <ul class="space-y-2 text-sm text-text-muted">
-                    <li><a href="services.html" class="hover:text-primary transition-colors">Software Development</a></li>
-                    <li><a href="services.html" class="hover:text-primary transition-colors">AI & Data Analysis</a></li>
-                    <li><a href="cognilearn.html" class="hover:text-primary transition-colors">EdTech & Incubation</a></li>
-                </ul>
-            </div>
-            
-            <div>
-                <h4 class="font-bold font-heading text-text-main mb-4">Legal</h4>
-                <ul class="space-y-2 text-sm text-text-muted">
-                    <li><a href="#" class="hover:text-primary transition-colors">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-primary transition-colors">Terms of Service</a></li>
-                </ul>
-            </div>
+<!-- Mobile Menu Overlay -->
+<div id="mobileMenu"
+  class="fixed inset-0 z-[100] bg-white translate-x-full transition-transform duration-300 ease-in-out md:hidden overflow-y-auto">
+  <div class="p-6 flex flex-col min-h-full">
+    <div class="flex justify-between items-center mb-12">
+      <img src="JHF_Logo.svg" alt="JHF IT" class="h-8 w-auto">
+      <button id="closeMenu" class="text-text-main p-2 flex items-center justify-center">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+    </div>
+    <div class="flex flex-col gap-8">
+      <a class="text-2xl font-bold text-text-main border-b border-border-color pb-4" href="services.html">Services</a>
+      <a class="text-2xl font-bold text-text-main border-b border-border-color pb-4"
+        href="cognilearn.html">Cognilearn</a>
+      <a class="text-2xl font-bold text-primary border-b border-border-color pb-4" href="case-studies.html">Case
+        Studies</a>
+      <a class="text-2xl font-bold text-text-main border-b border-border-color pb-4" href="careers.html">About</a>
+      <a class="mt-4 bg-primary text-white px-6 py-4 rounded-lg font-bold text-center shadow-lg shadow-primary/30"
+        href="contact.html">Contact Us</a>
+    </div>
+    <div class="mt-auto pt-10 text-center text-xs text-text-muted">
+      &copy; 2026 JHF IT. All rights reserved.
+    </div>
+  </div>
+</div>
+  <footer class="bg-[#1e293b] text-white pt-24 pb-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-16 pb-20 border-b border-white/5">
+        <div class="md:col-span-5">
+          <img src="JHF_Logo.svg" alt="JHF IT" class="h-10 w-auto mb-8 brightness-0 invert">
+          <p class="text-white/50 text-base leading-relaxed max-w-sm mb-10">
+            Professional IT Outsourcing and Skill Development. Bridging the gap between elite talent and global enterprise demand.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 rounded-xl border border-white/10 flex items-center justify-center hover:bg-primary transition-all duration-300 group">
+              <span class="material-symbols-outlined text-white/40 group-hover:text-white text-xl">share</span>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-xl border border-white/10 flex items-center justify-center hover:bg-primary transition-all duration-300 group">
+              <span class="material-symbols-outlined text-white/40 group-hover:text-white text-xl">mail</span>
+            </a>
+          </div>
         </div>
         
-        <div class="max-w-7xl mx-auto px-6 pt-8 mt-12 border-t border-border-color flex justify-between items-center text-sm text-text-muted">
-            <div>&copy; 2026 JHF IT. All rights reserved.</div>
-            <div class="flex gap-4">
-                <a href="#" class="hover:text-primary transition-colors">LinkedIn</a>
-                <a href="#" class="hover:text-primary transition-colors">Twitter</a>
-            </div>
+        <div class="md:col-span-2">
+          <h4 class="font-bold text-white mb-8 text-[10px] uppercase tracking-[0.2em] opacity-50">Studio</h4>
+          <ul class="space-y-4 text-sm text-white/50">
+            <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+            <li><a href="cognilearn.html" class="hover:text-white transition-colors">Cognilearn</a></li>
+            <li><a href="case-studies.html" class="hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
         </div>
-    </footer>
-</body>
-</html>
 
+        <div class="md:col-span-2">
+          <h4 class="font-bold text-white mb-8 text-[10px] uppercase tracking-[0.2em] opacity-50">Company</h4>
+          <ul class="space-y-4 text-sm text-white/50">
+            <li><a href="careers.html" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="careers.html" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
 
+        <div class="md:col-span-3">
+          <h4 class="font-bold text-white mb-8 text-[10px] uppercase tracking-[0.2em] opacity-50">Headquarters</h4>
+          <p class="text-sm text-white/50 leading-relaxed">
+            Asiatic Business Centre, NH Bypass Road<br>
+            Kazhakkoottam, Thiruvananthapuram<br>
+            Kerala 695582
+          </p>
+        </div>
+      </div>
+      
+      <div class="pt-12 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] text-white/20 uppercase tracking-widest font-bold">
+        <div>&copy; 2026 JHF IT Innovations Pvt Ltd.</div>
+        <div class="flex gap-8">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script>
+    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .line-reveal');
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => revealObs.observe(el));
 
+// Ã¢â€â‚¬Ã¢â€â‚¬ MOBILE MENU Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+const menuBtn = document.getElementById('menuBtn');
+const closeBtn = document.getElementById('closeMenu');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuLinks = mobileMenu.querySelectorAll('a');
+
+if (menuBtn & closeBtn & mobileMenu) {
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-full');
+    document.body.style.overflow = 'hidden';
+  });
+
+  const close = () => {
+    mobileMenu.classList.add('translate-x-full');
+    document.body.style.overflow = '';
+  };
+
+  closeBtn.addEventListener('click', close);
+  menuLinks.forEach(link => link.addEventListener('click', close));
+}
+</script>
+</body></html>
 

@@ -1,191 +1,338 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Contact Us | JHF IT</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet"/>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#2988BC",
-                        "surface": "#F7F9FB",
-                        "text-main": "#111827",
-                        "text-muted": "#4B5563",
-                        "border-color": "#E5E7EB"
-                    },
-                    fontFamily: {
-                        "heading": ["'Plus Jakarta Sans'", "sans-serif"],
-                        "body": ["Inter", "sans-serif"]
-                    }
-                }
-            }
-        }
-    </script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>Contact Us | JHF IT</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<script>tailwind.config={theme:{extend:{colors:{"primary":"#2988BC","surface":"#F7F9FB","text-main":"#1e293b","text-muted":"#4B5563","border-color":"#E5E7EB"},fontFamily:{heading:["'Plus Jakarta Sans'","sans-serif"],body:["'Plus Jakarta Sans'","sans-serif"]}}}}</script>
+  <style>
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-left { opacity: 0; transform: translateX(-36px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal-left.visible { opacity: 1; transform: none; }
+    .reveal-right { opacity: 0; transform: translateX(36px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal-right.visible { opacity: 1; transform: none; }
+
+    /* Line Reveal - Target only direct child spans of the reveal container's direct child (H1/H2) */
+    .line-reveal { overflow: hidden; }
+    .line-reveal > * > span { display: block; transform: translateY(100%); transition: transform 0.82s cubic-bezier(0.16, 1, 0.3, 1); }
+    .line-reveal.visible > * > span { transform: translateY(0); }
+
+
+
+    /* Glassmorphism */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Form Styles */
+    .form-input {
+      background: white;
+      border: 1px solid #E5E7EB;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .form-input:focus {
+      border-color: #2988BC;
+      box-shadow: 0 0 0 4px rgba(41, 136, 188, 0.08);
+      transform: translateY(-1px);
+    }
+
+    /* Segmented Control */
+    .segmented-control {
+      position: relative;
+      background: #F1F5F9;
+      padding: 4px;
+      border-radius: 12px;
+      display: inline-flex;
+    }
+    .segmented-control .indicator {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      height: calc(100% - 8px);
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 0;
+    }
+    .segmented-control label { position: relative; z-index: 1; }
+
+    /* Magnetic Physics */
+    .magnetic { display: inline-block; transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
+  </style>
 </head>
 <body class="bg-white text-text-main font-body antialiased">
-    
-    <!-- Navbar -->
-    <nav class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-border-color shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex-shrink-0">
-                <img src="JHF_Logo.svg" alt="JHF IT Logo" class="h-8 md:h-10 w-auto">
-            </a>
-            <div class="hidden md:flex gap-8 items-center">
-                <a class="text-text-main hover:text-primary transition-colors font-medium text-sm" href="services.html">Services</a>
-                <a class="text-text-main hover:text-primary transition-colors font-medium text-sm" href="cognilearn.html">Cognilearn</a>
-                <a class="text-text-main hover:text-primary transition-colors font-medium text-sm" href="case-studies.html">Case Studies</a>
-                <a class="text-text-main hover:text-primary transition-colors font-medium text-sm" href="careers.html">About</a>
+  <nav class="fixed top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-border-color shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="hover:opacity-80 transition-opacity">
+        <img src="JHF_Logo.svg" alt="JHF IT" class="h-8 md:h-10 w-auto">
+      </a>
+      <div class="hidden md:flex gap-8 items-center">
+        <a class="text-[#1e293b] hover:text-primary transition-colors font-semibold text-sm tracking-tight" href="services.html">Services</a>
+        <a class="text-[#1e293b] hover:text-primary transition-colors font-semibold text-sm tracking-tight" href="cognilearn.html">Cognilearn</a>
+        <a class="text-[#1e293b] hover:text-primary transition-colors font-semibold text-sm tracking-tight" href="case-studies.html">Case Studies</a>
+        <a class="text-[#1e293b] hover:text-primary transition-colors font-semibold text-sm tracking-tight" href="careers.html">About</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <a class="bg-[#1e293b] text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-primary transition-all duration-300 hidden sm:block shadow-lg shadow-black/5"
+          href="contact.html">Contact Us</a>
+        <button id="menuBtn" class="md:hidden text-[#1e293b] p-2 hover:bg-gray-100 rounded-lg transition-colors">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main>
+
+
+  <!-- Split Contact Section with Mesh Background -->
+  <section class="pt-56 pb-40 bg-white relative overflow-hidden">
+    <!-- Mesh Gradients -->
+    <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[160px] -mr-96 -mt-96 animate-pulse"></div>
+    <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[140px] -ml-72 -mb-72" style="animation-delay: 2s"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-24">
+        
+        <!-- Sidebar Info -->
+        <div class="lg:col-span-5 space-y-20 reveal-left">
+          <div class="line-reveal">
+            <h2 class="text-5xl lg:text-7xl font-extrabold font-heading text-[#1e293b] leading-[1] tracking-tighter mb-8 max-w-sm">
+              <span class="block">Let's build the <span class="text-primary">next big thing</span> together.</span>
+            </h2>
+          </div>
+          <p class="text-[#4B5563] text-xl leading-relaxed">
+            Whether you're looking to scale your engineering team or join our elite talent pool, our team is ready to assist.
+          </p>
+
+          <div class="space-y-8">
+            <div class="group glass-card p-10 rounded-[32px] hover:shadow-2xl transition-all duration-700">
+              <div class="w-14 h-14 rounded-2xl bg-[#1e293b] flex items-center justify-center mb-8 group-hover:scale-110 transition-all duration-500 shadow-xl shadow-black/10">
+                <span class="material-symbols-outlined text-white text-2xl">location_on</span>
+              </div>
+              <h3 class="font-extrabold text-[#1e293b] mb-4 text-xl tracking-tight">Kerala Headquarters</h3>
+              <p class="text-[#4B5563] text-base leading-loose opacity-70">
+                5th Floor, Asiatic Business Centre<br>Kazhakkoottam, Thiruvananthapuram<br>Kerala 695582
+              </p>
             </div>
-            <a class="bg-primary text-white px-6 py-2 rounded font-medium text-sm hover:bg-opacity-90 transition-opacity" href="contact.html">
-                Contact Us
-            </a>
+
+            <div class="group glass-card p-10 rounded-[32px] hover:shadow-2xl transition-all duration-700">
+              <div class="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center mb-8 group-hover:scale-110 transition-all duration-500 shadow-xl shadow-primary/20">
+                <span class="material-symbols-outlined text-white text-2xl">mail</span>
+              </div>
+              <h3 class="font-extrabold text-[#1e293b] mb-4 text-xl tracking-tight">Direct Access</h3>
+              <div class="space-y-2">
+                <a href="mailto:contact@jhfit.com" class="block text-lg font-bold text-primary hover:text-[#1e293b] transition-colors underline decoration-primary/20 hover:decoration-primary">contact@jhfit.com</a>
+                <p class="text-[10px] text-[#4B5563]/40 uppercase tracking-[0.2em] font-black">Average Response: 4 Hours</p>
+              </div>
+            </div>
+          </div>
         </div>
-    </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="max-w-7xl mx-auto px-6 py-20 lg:py-32">
-            <h1 class="text-5xl lg:text-6xl font-bold font-heading text-text-main mb-6 leading-tight max-w-4xl">
-                Contact Us
-            </h1>
-            <div class="flex gap-4 items-stretch">
-                    <div class="w-1.5 bg-primary rounded-full flex-shrink-0"></div>
-                    <p class="text-lg text-text-muted max-w-2xl">
-                Reach out to our global team to discuss enterprise partnerships, outsourcing consulting, or talent acquisition.
-            </p>
-                </div>
-        </section>
-
-        <!-- Contact Form & Info -->
-        <section class="max-w-7xl mx-auto px-6 py-12 mb-20">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <!-- Left: Contact Info -->
-                <div class="space-y-12 pl-1">
-                    <div>
-                        <h3 class="text-xl font-bold font-heading text-text-main mb-4 border-b border-border-color pb-2">Global Headquarters</h3>
-                        <p class="text-text-muted text-sm leading-relaxed">
-                            5th Floor, Asiatic Business Centre<br>
-                            NH Bypass Road, Attinkuzhi Rd<br>
-                            Kazhakkoottam, Thiruvananthapuram<br>
-                            Kerala 695582
-                        </p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold font-heading text-text-main mb-4 border-b border-border-color pb-2">Direct Inquiries</h3>
-                        <p class="text-text-muted text-sm leading-relaxed mb-2">
-                            <strong class="text-text-main font-semibold">Enterprise Consulting:</strong> contact@jhfit.com
-                        </p>
-                        <p class="text-text-muted text-sm leading-relaxed mb-2">
-                            <strong class="text-text-main font-semibold">Cognilearn Admissions:</strong> contact@jhfit.com
-                        </p>
-                        <p class="text-text-muted text-sm leading-relaxed">
-                            <strong class="text-text-main font-semibold">Support:</strong> contact@jhfit.com
-                        </p>
-                    </div>
-                    <div class="h-64 w-full rounded border border-border-color overflow-hidden mt-8">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80" alt="Corporate Headquarters" class="w-full h-full object-cover contrast-[1.15] saturate-[.70] brightness-[.95]"/>
-                    </div>
-                </div>
-
-                <!-- Right: Funnel Form -->
-                <div class="bg-surface p-8 border border-border-color rounded">
-                    <h3 class="text-xl font-bold font-heading text-text-main mb-6">Send an Inquiry</h3>
-                    <form class="space-y-6">
-                        
-                        <!-- Inquiry Type Funnel -->
-                        <div>
-                            <label class="block text-sm font-bold text-text-main mb-3">Inquiry Type</label>
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                <label class="border border-border-color rounded px-4 py-3 flex items-center gap-2 cursor-pointer hover:border-primary transition-colors bg-white">
-                                    <input type="radio" name="inquiry_type" value="consultation" class="accent-primary" checked>
-                                    <span class="text-sm font-medium text-text-main">Book Consultation</span>
-                                </label>
-                                <label class="border border-border-color rounded px-4 py-3 flex items-center gap-2 cursor-pointer hover:border-primary transition-colors bg-white">
-                                    <input type="radio" name="inquiry_type" value="project" class="accent-primary">
-                                    <span class="text-sm font-medium text-text-main">Project Inquiry</span>
-                                </label>
-                                <label class="border border-border-color rounded px-4 py-3 flex items-center gap-2 cursor-pointer hover:border-primary transition-colors bg-white">
-                                    <input type="radio" name="inquiry_type" value="partner" class="accent-primary">
-                                    <span class="text-sm font-medium text-text-main">Partner Inquiry</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Name -->
-                        <div>
-                            <label class="block text-sm font-bold text-text-main mb-2">Full Name</label>
-                            <input type="text" class="w-full border border-border-color rounded px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-sm" placeholder="John Doe">
-                        </div>
-                        <!-- Email -->
-                        <div>
-                            <label class="block text-sm font-bold text-text-main mb-2">Business Email</label>
-                            <input type="email" class="w-full border border-border-color rounded px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-sm" placeholder="john@company.com">
-                        </div>
-                        <!-- Message -->
-                        <div>
-                            <label class="block text-sm font-bold text-text-main mb-2">Message Details</label>
-                            <textarea class="w-full border border-border-color rounded px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-sm min-h-[140px]" placeholder="Briefly describe your requirements or partnership proposal."></textarea>
-                        </div>
-                        <!-- Submit -->
-                        <button type="submit" class="w-full bg-primary text-white font-bold py-4 rounded hover:bg-opacity-90 transition-colors text-sm">Submit Inquiry</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-surface border-t border-border-color py-16">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div class="md:col-span-1">
-                <img src="JHF_Logo.svg" alt="JHF IT Logo" class="h-8 md:h-10 w-auto mb-4">
-                <p class="text-sm text-text-muted mb-4">
-                    IT Outsourcing and Skill Development in EdTech.
-                </p>
-                <div class="text-sm text-text-muted">
-                    Email: contact@jhfit.com
-                </div>
-            </div>
+        <!-- Floating Form -->
+        <div class="lg:col-span-7 reveal-right" style="transition-delay: 0.1s">
+          <div class="bg-white rounded-[40px] p-10 lg:p-16 shadow-[0_40px_100px_rgba(30,41,59,0.08)] border border-slate-100">
+            <h3 class="text-4xl font-extrabold font-heading text-[#1e293b] mb-12 tracking-tight">Send an Inquiry</h3>
             
-            <div>
-                <h4 class="font-bold font-heading text-text-main mb-4">Company</h4>
-                <ul class="space-y-2 text-sm text-text-muted">
-                    <li><a href="careers.html" class="hover:text-primary transition-colors">About Us</a></li>
-                    <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
-                    <li><a href="careers.html" class="hover:text-primary transition-colors">Careers</a></li>
-                </ul>
-            </div>
-            
-            <div>
-                <h4 class="font-bold font-heading text-text-main mb-4">Services</h4>
-                <ul class="space-y-2 text-sm text-text-muted">
-                    <li><a href="services.html" class="hover:text-primary transition-colors">Software Development</a></li>
-                    <li><a href="services.html" class="hover:text-primary transition-colors">AI & Data Analysis</a></li>
-                    <li><a href="cognilearn.html" class="hover:text-primary transition-colors">EdTech & Incubation</a></li>
-                </ul>
-            </div>
-            
-            <div>
-                <h4 class="font-bold font-heading text-text-main mb-4">Legal</h4>
-                <ul class="space-y-2 text-sm text-text-muted">
-                    <li><a href="#" class="hover:text-primary transition-colors">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-primary transition-colors">Terms of Service</a></li>
-                </ul>
-            </div>
+            <form class="space-y-10">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="space-y-3">
+                  <label class="text-[11px] uppercase font-black tracking-widest text-[#94A3B8]">Full Name</label>
+                  <input type="text" placeholder="John Doe" class="w-full px-6 py-5 rounded-2xl form-input outline-none text-base">
+                </div>
+                <div class="space-y-3">
+                  <label class="text-[11px] uppercase font-black tracking-widest text-[#94A3B8]">Work Email</label>
+                  <input type="email" placeholder="john@company.com" class="w-full px-6 py-5 rounded-2xl form-input outline-none text-base">
+                </div>
+              </div>
+
+              <div class="space-y-4">
+                <label class="text-[11px] uppercase font-black tracking-widest text-[#94A3B8]">I'm interested in</label>
+                <div class="segmented-control w-full sm:w-auto">
+                  <div id="typeIndicator" class="indicator"></div>
+                  <label class="flex-1 sm:flex-none">
+                    <input type="radio" name="it" value="cons" class="hidden peer" checked onclick="moveIndicator(0)">
+                    <span class="px-8 py-3 rounded-lg text-sm font-bold text-[#64748B] peer-checked:text-[#1e293b] transition-all inline-block cursor-pointer">Consultation</span>
+                  </label>
+                  <label class="flex-1 sm:flex-none">
+                    <input type="radio" name="it" value="proj" class="hidden peer" onclick="moveIndicator(1)">
+                    <span class="px-8 py-3 rounded-lg text-sm font-bold text-[#64748B] peer-checked:text-[#1e293b] transition-all inline-block cursor-pointer">Project</span>
+                  </label>
+                  <label class="flex-1 sm:flex-none">
+                    <input type="radio" name="it" value="part" class="hidden peer" onclick="moveIndicator(2)">
+                    <span class="px-8 py-3 rounded-lg text-sm font-bold text-[#64748B] peer-checked:text-[#1e293b] transition-all inline-block cursor-pointer">Partnership</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="space-y-3">
+                <label class="text-[11px] uppercase font-black tracking-widest text-[#94A3B8]">Brief Overview</label>
+                <textarea rows="4" placeholder="How can we help you scale your operations?" class="w-full px-6 py-5 rounded-2xl form-input outline-none text-base resize-none"></textarea>
+              </div>
+
+              <div class="pt-4">
+                <button type="submit" id="magneticSubmit" class="w-full group relative bg-[#1e293b] text-white font-black py-7 rounded-2xl hover:bg-primary transition-all duration-500 shadow-2xl shadow-primary/20 overflow-hidden">
+                  <span class="relative z-10 flex items-center justify-center gap-4 text-xl tracking-tight">
+                    Submit Inquiry 
+                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform duration-500">arrow_forward</span>
+                  </span>
+                  <div class="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[-30deg]"></div>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenu"
+    class="fixed inset-0 z-[100] bg-white translate-x-full transition-transform duration-500 ease-in-out md:hidden overflow-y-auto">
+    <div class="p-8 flex flex-col min-h-full">
+      <div class="flex justify-between items-center mb-16">
+        <img src="JHF_Logo.svg" alt="JHF IT" class="h-8 w-auto">
+        <button id="closeMenu" class="text-[#1e293b] p-2 hover:bg-gray-100 rounded-lg transition-colors">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+      <div class="flex flex-col gap-10">
+        <a class="text-4xl font-extrabold text-[#1e293b] tracking-tighter" href="services.html">Services</a>
+        <a class="text-4xl font-extrabold text-[#1e293b] tracking-tighter" href="cognilearn.html">Cognilearn</a>
+        <a class="text-4xl font-extrabold text-[#1e293b] tracking-tighter" href="case-studies.html">Case Studies</a>
+        <a class="text-4xl font-extrabold text-[#1e293b] tracking-tighter" href="careers.html">About Us</a>
+        <a class="mt-4 bg-primary text-white px-8 py-5 rounded-2xl font-bold text-center shadow-2xl shadow-primary/30"
+          href="contact.html">Get in Touch</a>
+      </div>
+      <div class="mt-auto pt-20 flex flex-col gap-4">
+        <div class="text-[10px] uppercase font-bold tracking-[0.2em] text-[#94A3B8]">Contact</div>
+        <a href="mailto:contact@jhfit.com" class="text-lg font-bold text-[#1e293b]">contact@jhfit.com</a>
+        <div class="pt-8 text-xs text-[#94A3B8]">
+          &copy; 2026 JHF IT Innovations Pvt Ltd.
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="bg-[#1e293b] text-white pt-24 pb-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-16 pb-20 border-b border-white/5">
+        <div class="md:col-span-5">
+          <img src="JHF_Logo.svg" alt="JHF IT" class="h-10 w-auto mb-8 brightness-0 invert">
+          <p class="text-white/50 text-base leading-relaxed max-w-sm mb-10">
+            Professional IT Outsourcing and Skill Development. Bridging the gap between elite talent and global enterprise demand.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 rounded-xl border border-white/10 flex items-center justify-center hover:bg-primary transition-all duration-300 group">
+              <span class="material-symbols-outlined text-white/40 group-hover:text-white text-xl">share</span>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-xl border border-white/10 flex items-center justify-center hover:bg-primary transition-all duration-300 group">
+              <span class="material-symbols-outlined text-white/40 group-hover:text-white text-xl">mail</span>
+            </a>
+          </div>
         </div>
         
-        <div class="max-w-7xl mx-auto px-6 pt-8 mt-12 border-t border-border-color flex justify-between items-center text-sm text-text-muted">
-            <div>&copy; 2026 JHF IT. All rights reserved.</div>
-            <div class="flex gap-4">
-                <a href="#" class="hover:text-primary transition-colors">LinkedIn</a>
-                <a href="#" class="hover:text-primary transition-colors">Twitter</a>
-            </div>
+        <div class="md:col-span-2">
+          <h4 class="font-bold text-white mb-8 text-[10px] uppercase tracking-[0.2em] opacity-50">Studio</h4>
+          <ul class="space-y-4 text-sm text-white/50">
+            <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+            <li><a href="cognilearn.html" class="hover:text-white transition-colors">Cognilearn</a></li>
+            <li><a href="case-studies.html" class="hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
         </div>
-    </footer>
-</body>
-</html>
+
+        <div class="md:col-span-2">
+          <h4 class="font-bold text-white mb-8 text-[10px] uppercase tracking-[0.2em] opacity-50">Company</h4>
+          <ul class="space-y-4 text-sm text-white/50">
+            <li><a href="careers.html" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="careers.html" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-3">
+          <h4 class="font-bold text-white mb-8 text-[10px] uppercase tracking-[0.2em] opacity-50">Headquarters</h4>
+          <p class="text-sm text-white/50 leading-relaxed">
+            Asiatic Business Centre, NH Bypass Road<br>
+            Kazhakkoottam, Thiruvananthapuram<br>
+            Kerala 695582
+          </p>
+        </div>
+      </div>
+      
+      <div class="pt-12 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] text-white/20 uppercase tracking-widest font-bold">
+        <div>&copy; 2026 JHF IT Innovations Pvt Ltd.</div>
+        <div class="flex gap-8">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // â”€â”€ SCROLL EFFECTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .line-reveal');
+
+
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => revealObs.observe(el));
+
+    // â”€â”€ SEGMENTED CONTROL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    const indicator = document.getElementById('typeIndicator');
+    const labels = document.querySelectorAll('.segmented-control label');
+    
+    function moveIndicator(index) {
+      const label = labels[index];
+      indicator.style.width = `${label.offsetWidth}px`;
+      indicator.style.left = `${label.offsetLeft}px`;
+    }
+    // Set initial
+    setTimeout(() => moveIndicator(0), 100);
+
+    // â”€â”€ MAGNETIC BUTTON â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    const magneticBtn = document.getElementById('magneticSubmit');
+    if (magneticBtn) {
+      magneticBtn.addEventListener('mousemove', (e) => {
+        const rect = magneticBtn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        magneticBtn.style.transform = `translate(${x * 0.2}px, ${y * 0.4}px)`;
+      });
+      magneticBtn.addEventListener('mouseleave', () => {
+        magneticBtn.style.transform = `translate(0px, 0px)`;
+      });
+    }
+
+    // â”€â”€ MOBILE MENU â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if(menuBtn & closeBtn & mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-full');
+        document.body.style.overflow = 'hidden';
+      });
+      const close = () => {
+        mobileMenu.classList.add('translate-x-full');
+        document.body.style.overflow = '';
+      };
+      closeBtn.addEventListener('click', close);
+      mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', close));
+    }
+  </script>
+</body></html>

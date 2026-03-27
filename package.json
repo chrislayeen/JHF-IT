@@ -4,7 +4,8 @@
   "description": "JHF IT Home project assets from Stitch",
   "main": "index.html",
   "scripts": {
-    "start": "npx http-server -p 8126"
+    "build": "echo 'No build step required'",
+    "start": "npx http-server -p 8304"
   },
   "keywords": [],
   "author": "",

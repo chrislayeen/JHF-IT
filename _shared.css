@@ -1,0 +1,46 @@
+/* JHF IT — Shared Modern Styles */
+:root { --primary: #2988BC; }
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal-left.visible { opacity: 1; transform: none; }
+.reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal-right.visible { opacity: 1; transform: none; }
+
+/* Hero overlays */
+.hero-overlay { background: linear-gradient(to right, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.42) 55%, rgba(0,0,0,0.08) 100%); }
+.hero-overlay-center { background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.05) 100%); }
+
+/* Image hover zoom */
+.img-zoom { overflow: hidden; }
+.img-zoom img { transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94); }
+.img-zoom:hover img { transform: scale(1.06); }
+
+/* Marquee */
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-track { display: flex; width: max-content; animation: marquee 22s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+
+/* Number counter */
+.counter { font-variant-numeric: tabular-nums; }
+
+/* Bento grid */
+.bento-tall { grid-row: span 2; }
+
+/* Gradient text */
+.gradient-text { background: linear-gradient(135deg, #2988BC 0%, #5bb8f5 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* Glowing dot */
+@keyframes pulse-glow { 0%,100% { box-shadow: 0 0 0 0 rgba(41,136,188,0.5); } 50% { box-shadow: 0 0 0 8px rgba(41,136,188,0); } }
+.pulse-dot { animation: pulse-glow 2s infinite; }
+
+/* Tag pill */
+.tag { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(41,136,188,0.3); color: #2988BC; background: rgba(41,136,188,0.07); }
+
+/* Card hover lift */
+.card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.10); }
+
+/* Scroll reveal JS */
