@@ -178,7 +178,7 @@
         <a href="contact.html" class="group relative inline-flex items-center gap-4 bg-primary/5 hover:bg-primary/10 text-primary border border-primary/20 px-8 py-3 rounded-lg font-bold text-sm transition-all duration-500 overflow-hidden">
           <span class="relative z-10">Start a Project</span>
           <div class="relative z-10 w-8 h-8 rounded-md bg-primary flex items-center justify-center text-white transition-transform duration-500 group-hover:translate-x-1">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </div>
           <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
         </a>
@@ -230,7 +230,7 @@
         <div class="tag mb-4">Talent Incubation</div>
         <h2 class="text-4xl lg:text-5xl font-extrabold font-heading text-text-main leading-tight mb-6">EdTech<br/>Solutions</h2>
         <p class="text-text-muted leading-relaxed text-lg mb-6">Closing the global skills gap through specialized education platforms and proprietary technical incubation via Cognilearn.</p>
-        <a href="cognilearn.html" class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline">Learn about Cognilearn <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        <a href="cognilearn.html" class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline">Learn about Cognilearn <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
       </div>
     </div>
 
@@ -416,10 +416,11 @@ if (menuBtn && closeBtn && mobileMenu) {
 }
 </script>
   <script>
-    lucide.createIcons();
+    lucide.createIcons({ attrs: { "stroke-width": 1.5, "class": "lucide-icon" } });
   </script>
 </body>
 </html>
+
 
 
 
