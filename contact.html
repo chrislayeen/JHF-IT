@@ -5,7 +5,7 @@
 <title>Contact Us | JHF IT</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+
 <script>tailwind.config={theme:{extend:{colors:{"primary":"#2988BC","surface":"#F7F9FB","text-main":"#1e293b","text-muted":"#4B5563","border-color":"#E5E7EB"},fontFamily:{heading:["'Plus Jakarta Sans'","sans-serif"],body:["'Plus Jakarta Sans'","sans-serif"]}}}}</script>
   <style>
     /* Scroll reveal */
@@ -73,6 +73,7 @@
     /* Magnetic Physics */
     .magnetic { display: inline-block; transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
   </style>
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-white text-text-main font-body antialiased">
   <nav class="fixed top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-border-color shadow-sm transition-all duration-300">
@@ -90,7 +91,7 @@
         <a class="bg-[#1e293b] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-primary transition-all duration-300 hidden sm:block shadow-lg shadow-black/5"
           href="contact.html">Contact Us</a>
         <button id="menuBtn" class="md:hidden text-[#1e293b] p-2 hover:bg-gray-100 rounded-lg transition-colors">
-          <span class="material-symbols-outlined text-2xl">menu</span>
+          <i data-lucide="menu" class="text-2xl w-6 h-6"></i>
         </button>
       </div>
     </div>
@@ -121,7 +122,7 @@
           <div class="space-y-8">
             <div class="group glass-card p-10 rounded-lg hover:shadow-2xl transition-all duration-700">
               <div class="w-14 h-14 rounded-lg bg-[#1e293b] flex items-center justify-center mb-8 group-hover:scale-110 transition-all duration-500 shadow-xl shadow-black/10">
-                <span class="material-symbols-outlined text-white text-2xl">location_on</span>
+                <i data-lucide="map-pin" class="text-white text-2xl w-6 h-6"></i>
               </div>
               <h3 class="font-extrabold text-[#1e293b] mb-4 text-xl tracking-tight">Kerala Headquarters</h3>
               <p class="text-[#4B5563] text-base leading-loose opacity-70">
@@ -131,7 +132,7 @@
 
             <div class="group glass-card p-10 rounded-lg hover:shadow-2xl transition-all duration-700">
                 <div class="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                <span class="material-symbols-outlined text-white text-2xl">mail</span>
+                <i data-lucide="mail" class="text-white text-2xl w-6 h-6"></i>
               </div>
               <h3 class="font-extrabold text-[#1e293b] mb-4 text-xl tracking-tight">Direct Access</h3>
               <div class="space-y-2">
@@ -188,7 +189,7 @@
                 class="w-full bg-[#1e293b] text-white py-4 lg:py-6 rounded-lg font-black text-lg lg:text-xl flex items-center justify-center gap-4 group hover:bg-primary transition-all duration-500 overflow-hidden relative shadow-2xl">
                 <span class="relative z-10 flex items-center gap-4">
                   Submit Inquiry
-                  <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform w-6 h-6"></i>
                 </span>
                 <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </button>
@@ -208,7 +209,7 @@
       <div class="flex justify-between items-center mb-16">
         <img src="JHF_Logo.svg" alt="JHF IT" class="h-8 w-auto">
         <button id="closeMenu" class="text-[#1e293b] p-2 hover:bg-gray-100 rounded-lg transition-colors">
-          <span class="material-symbols-outlined text-2xl">close</span>
+          <i data-lucide="x" class="text-2xl w-6 h-6"></i>
         </button>
       </div>
       <div class="flex flex-col gap-10">
@@ -238,10 +239,10 @@
           </p>
           <div class="flex gap-4">
             <a href="#" class="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center hover:bg-primary transition-all duration-300 group">
-              <span class="material-symbols-outlined text-white/40 group-hover:text-white text-xl">share</span>
+              <i data-lucide="share-2" class="text-white/40 group-hover:text-white text-xl w-6 h-6"></i>
             </a>
             <a href="#" class="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center hover:bg-primary transition-all duration-300 group">
-              <span class="material-symbols-outlined text-white/40 group-hover:text-white text-xl">mail</span>
+              <i data-lucide="mail" class="text-white/40 group-hover:text-white text-xl w-6 h-6"></i>
             </a>
           </div>
         </div>
@@ -361,7 +362,11 @@
       mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', close));
     }
   </script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body></html>
+
 
 
 

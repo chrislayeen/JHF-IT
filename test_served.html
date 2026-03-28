@@ -6,7 +6,7 @@
     <title>JHF IT | Engineering Software. Building Global Talent.</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -43,6 +43,7 @@
         }
         selection { background: #f1f5f9; }
     </style>
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-white text-slate-800 font-body antialiased">
     <!-- Top Navigation -->
@@ -78,7 +79,7 @@
                     </button>
                     <button class="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-sm font-headline font-bold text-base hover:bg-slate-50 transition-colors flex items-center gap-2" onclick="window.location.href='case-studies.html'">
                         View Portfolio
-                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                        <i data-lucide="arrow-right" class="text-lg w-6 h-6"></i>
                     </button>
                 </div>
             </div>
@@ -122,7 +123,7 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-10 flex flex-col justify-between min-h-[400px] border border-slate-100 shadow-sm hover:border-slate-300 transition-colors">
-                    <span class="material-symbols-outlined text-4xl text-slate-900">developer_board</span>
+                    <i data-lucide="cpu" class="text-4xl text-slate-900 w-6 h-6"></i>
                     <div>
                         <h3 class="text-2xl font-bold font-headline text-slate-900 mb-4">Enterprise Architecture</h3>
                         <p class="text-slate-500 text-sm leading-relaxed mb-6">Designing scalable, resilient software infrastructures that grow with your global ambitions.</p>
@@ -177,15 +178,15 @@
                         <h4 class="text-2xl font-bold font-headline text-slate-900 mb-2">Global Placement</h4>
                         <p class="text-slate-500 text-sm">Direct integration into Fortune 500 engineering teams.</p>
                     </div>
-                    <span class="material-symbols-outlined text-6xl opacity-10">public</span>
+                    <i data-lucide="globe" class="text-6xl opacity-10 w-6 h-6"></i>
                 </div>
                 <div class="bg-white p-8 text-slate-900 flex flex-col justify-between border border-slate-100 shadow-sm">
                     <h4 class="text-xl font-bold font-headline text-slate-900">Mentor-Led</h4>
-                    <span class="material-symbols-outlined text-4xl text-slate-900">groups</span>
+                    <i data-lucide="users" class="text-4xl text-slate-900 w-6 h-6"></i>
                 </div>
                 <div class="bg-white p-8 flex flex-col justify-between border border-slate-100 shadow-sm">
                     <h4 class="text-xl font-bold font-headline text-slate-900">Certified Skillsets</h4>
-                    <span class="material-symbols-outlined text-4xl text-slate-900">verified</span>
+                    <i data-lucide="badge-check" class="text-4xl text-slate-900 w-6 h-6"></i>
                 </div>
             </div>
         </div>
@@ -253,12 +254,16 @@
                 <p class="text-slate-500 text-xs font-body">© 2026 JHF IT. All rights reserved.</p>
                 <div class="flex gap-6">
                     <span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-slate-900 transition-colors">language</span>
-                    <span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-slate-900 transition-colors">share</span>
+                    <i data-lucide="share-2" class="text-slate-400 cursor-pointer hover:text-slate-900 transition-colors w-6 h-6"></i>
                 </div>
             </div>
         </div>
     </footer>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
+
 
 
