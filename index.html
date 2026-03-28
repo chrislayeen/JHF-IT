@@ -250,27 +250,33 @@
       animation: scroll-bounce 1.8s ease-in-out infinite
     }
 
-    /* Arrow buttons */
+    /* Arrow buttons - Premium Fixed */
     .carousel-arrow {
       position: absolute;
-      top: 50%;
+      top: 50.5%;
       transform: translateY(-50%);
-      z-index: 20;
-      width: 48px;
-      height: 48px;
+      z-index: 50;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, .12);
+      background: rgba(255, 255, 255, .15);
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, .2);
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: background .2s ease
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
+    @media (min-width: 1024px) {
+      .carousel-arrow {
+        display: flex !important;
+      }
+    }
     .carousel-arrow:hover {
-      background: rgba(41, 136, 188, .7)
+      background: rgba(255, 255, 255, .25);
+      transform: translateY(-50%) scale(1.05);
     }
   </style>
 </head>
@@ -739,18 +745,18 @@
           <div class="md:col-span-8 md:row-span-2 group relative rounded-2xl overflow-hidden reveal shadow-2xl">
             <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80"
               alt="Global" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 p-12 z-10">
-              <div class="tag-white mb-6 backdrop-blur-md bg-white/10 border-white/20">Global Reach</div>
-              <h3 class="text-3xl lg:text-5xl font-extrabold font-heading text-white mb-5 leading-tight tracking-tight">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-8 lg:p-12 z-10 w-full">
+              <div class="tag-white mb-5 backdrop-blur-md bg-white/10 border-white/20">Global Reach</div>
+              <h3 class="text-3xl lg:text-5xl font-extrabold font-heading text-white mb-4 leading-[1.05] tracking-tighter">
                 MEA-Focused<br />Enterprise Delivery</h3>
-              <p class="text-white/70 text-lg max-w-xl leading-relaxed">Strategic operational presence across Dubai,
-                Riyadh, and South Asia delivering enterprise-grade solutions where it matters most.</p>
+              <p class="text-white/70 text-base lg:text-lg max-w-xl leading-relaxed">Strategic operational presence across Dubai,
+                Riyadh, and South Asia delivering enterprise-grade solutions.</p>
             </div>
           </div>
 
           <!-- Stats 1: Global Clients -->
-          <div class="md:col-span-4 bg-primary rounded-2xl p-10 flex flex-col justify-between reveal shadow-xl group hover:shadow-primary/20 transition-all duration-500" style="transition-delay:0.1s">
+          <div class="md:col-span-4 bg-primary rounded-2xl p-8 lg:p-10 flex flex-col justify-between reveal shadow-xl group hover:shadow-primary/20 transition-all duration-500" style="transition-delay:0.1s">
             <div class="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center transition-transform group-hover:rotate-12">
               <span class="material-symbols-outlined text-white text-3xl font-bold">groups</span>
             </div>
@@ -761,7 +767,7 @@
           </div>
 
           <!-- Stats 2: Quality Lock -->
-          <div class="md:col-span-4 bg-text-main rounded-2xl p-10 flex flex-col justify-between reveal shadow-xl group hover:shadow-black/20 transition-all duration-500" style="transition-delay:0.15s">
+          <div class="md:col-span-4 bg-text-main rounded-2xl p-8 lg:p-10 flex flex-col justify-between reveal shadow-xl group hover:shadow-black/20 transition-all duration-500" style="transition-delay:0.15s">
             <div class="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center transition-transform group-hover:scale-110">
               <span class="material-symbols-outlined text-primary text-3xl font-bold">verified</span>
             </div>
@@ -772,7 +778,7 @@
           </div>
 
           <!-- Feature 1: Cognilearn -->
-          <div class="md:col-span-6 bg-white border border-border-color rounded-2xl p-10 flex flex-col justify-between card-lift reveal shadow-sm" style="transition-delay:0.2s">
+          <div class="md:col-span-6 bg-white border border-border-color rounded-2xl p-8 lg:p-10 flex flex-col justify-between card-lift reveal shadow-sm" style="transition-delay:0.2s">
             <div class="w-14 h-14 rounded-xl bg-primary/5 flex items-center justify-center mb-6">
               <span class="material-symbols-outlined text-primary text-3xl">school</span>
             </div>
@@ -783,7 +789,7 @@
           </div>
 
           <!-- Feature 2: AI-Powered -->
-          <div class="md:col-span-6 bg-white border border-border-color rounded-2xl p-10 flex flex-col justify-between card-lift reveal shadow-sm" style="transition-delay:0.25s">
+          <div class="md:col-span-6 bg-white border border-border-color rounded-2xl p-8 lg:p-10 flex flex-col justify-between card-lift reveal shadow-sm" style="transition-delay:0.25s">
             <div class="w-14 h-14 rounded-xl bg-primary/5 flex items-center justify-center mb-6">
               <span class="material-symbols-outlined text-primary text-3xl">neurology</span>
             </div>
@@ -962,16 +968,46 @@
       startTimer();
     }
 
-    // Start carousel after a brief delay Ã¢â‚¬â€ reliable regardless of image load time
+    // Start carousel after a brief delay — reliable regardless of image load time
     setTimeout(initCarousel, 300);
 
-    document.getElementById('nextBtn').addEventListener('click', () => { goTo(current + 1); startTimer(); });
-    document.getElementById('prevBtn').addEventListener('click', () => { goTo(current - 1); startTimer(); });
+      // Swipe support for mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+      const carousel = document.getElementById('hero');
+
+      function handleSwipe() {
+        const threshold = 50;
+        if (touchEndX < touchStartX - threshold) {
+          // Swipe left -> Next
+          goTo(current + 1);
+          startTimer();
+        }
+        if (touchEndX > touchStartX + threshold) {
+          // Swipe right -> Prev
+          goTo(current - 1);
+          startTimer();
+        }
+      }
+
+      if (carousel) {
+        carousel.addEventListener('touchstart', e => {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        carousel.addEventListener('touchend', e => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        }, { passive: true });
+      }
+
+      document.getElementById('nextBtn').addEventListener('click', () => { goTo(current + 1); startTimer(); });
+      document.getElementById('prevBtn').addEventListener('click', () => { goTo(current - 1); startTimer(); });
     dots.forEach(dot => {
       dot.addEventListener('click', () => { goTo(+dot.dataset.dot); startTimer(); });
     });
 
-    // pause on hover Ã¢â‚¬â€ but only after user has actually moved the mouse
+    // pause on hover — but only after user has actually moved the mouse
     // (prevents static cursor over hero from killing the timer on first load)
     let userMoved = false;
     const hero = document.getElementById('hero');

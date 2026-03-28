@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/><meta content="width=device-width,initial-scale=1.0" name="viewport"/>
@@ -49,13 +49,19 @@
       background: #F1F5F9;
       padding: 4px;
       border-radius: 12px;
-      display: inline-flex;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2px;
+    }
+    @media (min-width: 640px) {
+      .segmented-control {
+        flex-direction: row !important;
+        display: flex !important;
+        width: 100% !important;
+      }
     }
     .segmented-control .indicator {
       position: absolute;
-      top: 4px;
-      left: 4px;
-      height: calc(100% - 8px);
       background: white;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -154,20 +160,20 @@
               </div>
 
               <div class="space-y-4">
-                <label class="text-[11px] uppercase font-black tracking-widest text-[#94A3B8]">I'm interested in</label>
-                <div class="segmented-control w-full sm:w-auto">
+                <label class="block text-[11px] uppercase font-black tracking-widest text-[#94A3B8]">I'm interested in</label>
+                <div class="segmented-control w-full flex flex-col sm:flex-row">
                   <div id="typeIndicator" class="indicator"></div>
-                  <label class="flex-1 sm:flex-none">
+                  <label class="flex-1">
                     <input type="radio" name="it" value="cons" class="hidden peer" checked onclick="moveIndicator(0)">
-                    <span class="px-8 py-3 rounded-lg text-sm font-bold text-[#64748B] peer-checked:text-[#1e293b] transition-all inline-block cursor-pointer">Consultation</span>
+                    <span class="px-4 sm:px-8 py-3 rounded-lg text-xs sm:text-sm font-bold text-[#64748B] peer-checked:text-[#1e293b] transition-all flex items-center justify-center cursor-pointer text-center">Consultation</span>
                   </label>
-                  <label class="flex-1 sm:flex-none">
+                  <label class="flex-1">
                     <input type="radio" name="it" value="proj" class="hidden peer" onclick="moveIndicator(1)">
-                    <span class="px-8 py-3 rounded-lg text-sm font-bold text-[#64748B] peer-checked:text-[#1e293b] transition-all inline-block cursor-pointer">Project</span>
+                    <span class="px-4 sm:px-8 py-3 rounded-lg text-xs sm:text-sm font-bold text-[#64748B] peer-checked:text-[#1e293b] transition-all flex items-center justify-center cursor-pointer text-center">Project</span>
                   </label>
-                  <label class="flex-1 sm:flex-none">
+                  <label class="flex-1">
                     <input type="radio" name="it" value="part" class="hidden peer" onclick="moveIndicator(2)">
-                    <span class="px-8 py-3 rounded-lg text-sm font-bold text-[#64748B] peer-checked:text-[#1e293b] transition-all inline-block cursor-pointer">Partnership</span>
+                    <span class="px-4 sm:px-8 py-3 rounded-lg text-xs sm:text-sm font-bold text-[#64748B] peer-checked:text-[#1e293b] transition-all flex items-center justify-center cursor-pointer text-center">Partnership</span>
                   </label>
                 </div>
               </div>
@@ -177,15 +183,15 @@
                 <textarea rows="4" placeholder="How can we help you scale your operations?" class="w-full px-6 py-5 rounded-2xl form-input outline-none text-base resize-none"></textarea>
               </div>
 
-              <div class="pt-4">
-                <button type="submit" id="magneticSubmit" class="w-full group relative bg-[#1e293b] text-white font-black py-7 rounded-2xl hover:bg-primary transition-all duration-500 shadow-2xl shadow-primary/20 overflow-hidden">
-                  <span class="relative z-10 flex items-center justify-center gap-4 text-xl tracking-tight">
-                    Submit Inquiry 
-                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform duration-500">arrow_forward</span>
-                  </span>
-                  <div class="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[-30deg]"></div>
-                </button>
-              </div>
+              <!-- Submit Button -->
+              <button id="magneticSubmit"
+                class="w-full bg-[#1e293b] text-white py-4 lg:py-6 rounded-2xl font-black text-lg lg:text-xl flex items-center justify-center gap-4 group hover:bg-primary transition-all duration-500 overflow-hidden relative shadow-2xl">
+                <span class="relative z-10 flex items-center gap-4">
+                  Submit Inquiry
+                  <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </span>
+                <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </button>
             </form>
           </div>
         </div>
@@ -298,11 +304,31 @@
     
     function moveIndicator(index) {
       const label = labels[index];
-      indicator.style.width = `${label.offsetWidth}px`;
-      indicator.style.left = `${label.offsetLeft}px`;
+      const control = document.querySelector('.segmented-control');
+      const isVertical = window.getComputedStyle(control).flexDirection === 'column';
+      
+      if (isVertical) {
+        indicator.style.width = 'calc(100% - 8px)';
+        indicator.style.left = '4px';
+        indicator.style.height = `${label.offsetHeight}px`;
+        indicator.style.top = `${label.offsetTop}px`;
+      } else {
+        indicator.style.height = 'calc(100% - 8px)';
+        indicator.style.top = '4px';
+        indicator.style.width = `${label.offsetWidth}px`;
+        indicator.style.left = `${label.offsetLeft}px`;
+      }
     }
     // Set initial
     setTimeout(() => moveIndicator(0), 100);
+    window.addEventListener('resize', () => {
+      // Find the currently checked radio and update indicator
+      const checkedInput = document.querySelector('.segmented-control input:checked');
+      if (checkedInput) {
+        const index = Array.from(labels).indexOf(checkedInput.parentElement);
+        moveIndicator(index);
+      }
+    });
 
     // â”€â”€ MAGNETIC BUTTON â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const magneticBtn = document.getElementById('magneticSubmit');
