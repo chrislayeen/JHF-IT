@@ -45,10 +45,9 @@
 
     /* Segmented Control */
     .segmented-control {
-      position: relative;
-      background: #F1F5F9;
+      background: #f1f5f9;
       padding: 4px;
-      border-radius: 12px;
+      border-radius: 8px;
       display: flex !important;
       flex-direction: column !important;
       gap: 2px;
@@ -63,10 +62,10 @@
     .segmented-control .indicator {
       position: absolute;
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      z-index: 0;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
     }
     .segmented-control label { position: relative; z-index: 1; }
 
@@ -87,7 +86,7 @@
         <a class="text-[#1e293b] hover:text-primary transition-colors font-semibold text-sm tracking-tight" href="careers.html">About</a>
       </div>
       <div class="flex items-center gap-4">
-        <a class="bg-[#1e293b] text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-primary transition-all duration-300 hidden sm:block shadow-lg shadow-black/5"
+        <a class="bg-[#1e293b] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-primary transition-all duration-300 hidden sm:block shadow-lg shadow-black/5"
           href="contact.html">Contact Us</a>
         <button id="menuBtn" class="md:hidden text-[#1e293b] p-2 hover:bg-gray-100 rounded-lg transition-colors">
           <span class="material-symbols-outlined text-2xl">menu</span>
@@ -101,8 +100,8 @@
   <!-- Split Contact Section with Mesh Background -->
   <section class="pt-56 pb-40 bg-white relative overflow-hidden">
     <!-- Mesh Gradients -->
-    <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[160px] -mr-96 -mt-96 animate-pulse"></div>
-    <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[140px] -ml-72 -mb-72" style="animation-delay: 2s"></div>
+    <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-md blur-[160px] -mr-96 -mt-96 animate-pulse"></div>
+    <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-md blur-[140px] -ml-72 -mb-72" style="animation-delay: 2s"></div>
 
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-24">
@@ -119,8 +118,8 @@
           </p>
 
           <div class="space-y-8">
-            <div class="group glass-card p-10 rounded-[32px] hover:shadow-2xl transition-all duration-700">
-              <div class="w-14 h-14 rounded-2xl bg-[#1e293b] flex items-center justify-center mb-8 group-hover:scale-110 transition-all duration-500 shadow-xl shadow-black/10">
+            <div class="group glass-card p-10 rounded-lg hover:shadow-2xl transition-all duration-700">
+              <div class="w-14 h-14 rounded-lg bg-[#1e293b] flex items-center justify-center mb-8 group-hover:scale-110 transition-all duration-500 shadow-xl shadow-black/10">
                 <span class="material-symbols-outlined text-white text-2xl">location_on</span>
               </div>
               <h3 class="font-extrabold text-[#1e293b] mb-4 text-xl tracking-tight">Kerala Headquarters</h3>
@@ -129,8 +128,8 @@
               </p>
             </div>
 
-            <div class="group glass-card p-10 rounded-[32px] hover:shadow-2xl transition-all duration-700">
-              <div class="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center mb-8 group-hover:scale-110 transition-all duration-500 shadow-xl shadow-primary/20">
+            <div class="group glass-card p-10 rounded-lg hover:shadow-2xl transition-all duration-700">
+                <div class="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                 <span class="material-symbols-outlined text-white text-2xl">mail</span>
               </div>
               <h3 class="font-extrabold text-[#1e293b] mb-4 text-xl tracking-tight">Direct Access</h3>
@@ -144,18 +143,18 @@
 
         <!-- Floating Form -->
         <div class="lg:col-span-7 reveal-right" style="transition-delay: 0.1s">
-          <div class="bg-white rounded-[40px] p-10 lg:p-16 shadow-[0_40px_100px_rgba(30,41,59,0.08)] border border-slate-100">
+          <div class="bg-white p-10 rounded-lg shadow-2xl shadow-slate-200/50 border border-slate-100 reveal-right">
             <h3 class="text-4xl font-extrabold font-heading text-[#1e293b] mb-12 tracking-tight">Send an Inquiry</h3>
             
             <form class="space-y-10">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div class="space-y-3">
                   <label class="text-[11px] uppercase font-black tracking-widest text-[#94A3B8]">Full Name</label>
-                  <input type="text" placeholder="John Doe" class="w-full px-6 py-5 rounded-2xl form-input outline-none text-base">
+                  <input type="text" placeholder="John Doe" class="w-full px-6 py-4 rounded-lg form-input outline-none text-base">
                 </div>
                 <div class="space-y-3">
                   <label class="text-[11px] uppercase font-black tracking-widest text-[#94A3B8]">Work Email</label>
-                  <input type="email" placeholder="john@company.com" class="w-full px-6 py-5 rounded-2xl form-input outline-none text-base">
+                  <input type="email" placeholder="john@company.com" class="w-full px-6 py-4 rounded-lg form-input outline-none text-base">
                 </div>
               </div>
 
@@ -180,12 +179,12 @@
 
               <div class="space-y-3">
                 <label class="text-[11px] uppercase font-black tracking-widest text-[#94A3B8]">Brief Overview</label>
-                <textarea rows="4" placeholder="How can we help you scale your operations?" class="w-full px-6 py-5 rounded-2xl form-input outline-none text-base resize-none"></textarea>
+                <textarea rows="4" placeholder="How can we help you scale your operations?" class="w-full px-6 py-5 rounded-lg form-input outline-none text-base resize-none"></textarea>
               </div>
 
               <!-- Submit Button -->
               <button id="magneticSubmit"
-                class="w-full bg-[#1e293b] text-white py-4 lg:py-6 rounded-2xl font-black text-lg lg:text-xl flex items-center justify-center gap-4 group hover:bg-primary transition-all duration-500 overflow-hidden relative shadow-2xl">
+                class="w-full bg-[#1e293b] text-white py-4 lg:py-6 rounded-lg font-black text-lg lg:text-xl flex items-center justify-center gap-4 group hover:bg-primary transition-all duration-500 overflow-hidden relative shadow-2xl">
                 <span class="relative z-10 flex items-center gap-4">
                   Submit Inquiry
                   <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -216,7 +215,7 @@
         <a class="text-4xl font-extrabold text-[#1e293b] tracking-tighter" href="cognilearn.html">Cognilearn</a>
         <a class="text-4xl font-extrabold text-[#1e293b] tracking-tighter" href="case-studies.html">Case Studies</a>
         <a class="text-4xl font-extrabold text-[#1e293b] tracking-tighter" href="careers.html">About Us</a>
-        <a class="mt-4 bg-primary text-white px-8 py-5 rounded-2xl font-bold text-center shadow-2xl shadow-primary/30"
+        <a class="mt-4 bg-primary text-white px-8 py-5 rounded-lg font-bold text-center shadow-2xl shadow-primary/30"
           href="contact.html">Get in Touch</a>
       </div>
       <div class="mt-auto pt-20 flex flex-col gap-4">
@@ -237,10 +236,10 @@
             Professional IT Outsourcing and Skill Development. Bridging the gap between elite talent and global enterprise demand.
           </p>
           <div class="flex gap-4">
-            <a href="#" class="w-10 h-10 rounded-xl border border-white/10 flex items-center justify-center hover:bg-primary transition-all duration-300 group">
+            <a href="#" class="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center hover:bg-primary transition-all duration-300 group">
               <span class="material-symbols-outlined text-white/40 group-hover:text-white text-xl">share</span>
             </a>
-            <a href="#" class="w-10 h-10 rounded-xl border border-white/10 flex items-center justify-center hover:bg-primary transition-all duration-300 group">
+            <a href="#" class="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center hover:bg-primary transition-all duration-300 group">
               <span class="material-symbols-outlined text-white/40 group-hover:text-white text-xl">mail</span>
             </a>
           </div>
@@ -362,4 +361,6 @@
     }
   </script>
 </body></html>
+
+
 
