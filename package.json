@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "echo 'No build step required'",
-    "start": "npx http-server -p 8306"
+    "start": "npx http-server -p 8405"
   },
   "keywords": [],
   "author": "",
